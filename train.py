@@ -70,7 +70,7 @@ def main():
     net = Baseline_ResNet_emo().to(DEVICE)
 
     df = pd.read_csv('./Dataset/Fashion-How23_sub1_train_edit.csv')
-    train_dataset = ETRIDataset_emo(df, base_path='./Dataset/train/')
+    train_dataset = ETRIDataset_emo(df, base_path='./Dataset/Train/')
     train_dataloader = torch.utils.data.DataLoader(train_dataset, batch_size=a.batch_size, shuffle=True, num_workers=4)
 
     optimizer = torch.optim.Adam(net.parameters(), lr=a.lr)
